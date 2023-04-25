@@ -3,6 +3,7 @@ using Library.figures.@abstract;
 
 namespace Library.figures
 {
+    [CustomClassAttribute("Circle")]
     public class Circle : ITwoDimensionFigure
     {
         private double _r;
@@ -21,10 +22,14 @@ namespace Library.figures
         public FigureType FigureType => FigureType.Circle;
         public int FigureId { get; }
 
+        [CustomAttribute("GetAnglesCount")]
         public int GetAnglesCount()
         {
             return 0;
         }
+        
+        
+        [CustomAttribute("GetTitle")]
 
         public string GetTitle()
         {
@@ -32,7 +37,5 @@ namespace Library.figures
         }
     }
 
-
-    
     
 }

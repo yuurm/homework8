@@ -3,6 +3,7 @@ using Library.figures.@abstract;
 
 namespace Library.figures
 {
+    [CustomClassAttribute("Cube")]
     public class Cube : IThreeDimensionFigure
     {
         private double _a;
@@ -17,12 +18,16 @@ namespace Library.figures
         public FigureType FigureType => FigureType.Cube;
         public int FigureId { get; }
 
+        [CustomAttribute("GetAnglesCount")]
         public int GetAnglesCount()
         {
             return 8;
         }
 
         public double Volume => Math.Pow(_a, 3);
+        
+        
+        [CustomAttribute("GetTitle")]
         public string GetTitle()
         {
             return "cube";

@@ -3,6 +3,7 @@ using Library.figures.@abstract;
 
 namespace Library.figures
 {
+    [CustomClassAttribute("Square")]
     public sealed class Square : ITwoDimensionFigure
     {
         private double _a;
@@ -25,11 +26,13 @@ namespace Library.figures
         public  FigureType FigureType => FigureType.Square;
         public int FigureId { get; }
 
+        [CustomAttribute("GetAnglesCount")]
         public  int GetAnglesCount()
         {
             return Angles;
         }
 
+        [CustomAttribute("GetTitle")]
         public string GetTitle()
         {
             return "square";

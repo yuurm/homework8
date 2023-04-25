@@ -3,6 +3,7 @@ using Library.figures.@abstract;
 
 namespace Library.figures
 {
+    [CustomClassAttribute("Triangle")]
     public class Triangle : ITwoDimensionFigure
     {
         private double _a, _b, _c;
@@ -29,16 +30,20 @@ namespace Library.figures
         public FigureType FigureType => FigureType.Triangle;
         public int FigureId { get; }
 
+        [CustomAttribute("GetAnglesCount")]
         public  int GetAnglesCount()
         {
             return Angles;
         }
+        
+        [CustomAttribute("GetColor")]
 
         public FigureColor GetColor()
         {
             return FigureColor.White;
         }
 
+        [CustomAttribute("GetTitle")]
         public string GetTitle()
         {
             return "triangle";
